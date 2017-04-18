@@ -2,7 +2,7 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
-import { Sales } from '../api/sales.js';
+import { Sales } from '../imports/api/sales.js';
 
 
 Template.sales.helpers({

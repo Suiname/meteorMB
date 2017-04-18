@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { Sales } from '../api/sales.js';
+import { Sales } from '../imports/api/sales.js';
 
  if (Meteor.isServer) {
   // This code only runs on the server
