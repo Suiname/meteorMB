@@ -3,7 +3,7 @@
   <a href="/newRecipe">New</a>
   <ul>
     {{#each entries}}
-    <li>{{title}} <button class="delete">delete</button></li>
+    <li><a href="/recipe/{{_id}}">{{title}}</a><button class="delete">delete</button></li>
     {{/each}}
   </ul>
 </template>
