@@ -1,11 +1,8 @@
 import { Meteor } from 'meteor/meteor';
-import Recipes from '/lib/recipes';
 
 Meteor.startup(() => {
   //count recipes
-  
   const num = Recipes.find().count();
-  console.log(Recipes.find());
   if (num === 0) {
     const fixtures = [
       {
@@ -20,4 +17,7 @@ Meteor.startup(() => {
     });
 
   }
+  Meteor.publish('recipes', () => {
+    return Recipes.find();
+  })
 });
