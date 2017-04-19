@@ -1,17 +1,18 @@
 FlowRouter.route('/', {
     action: (params, queryParams) => {
         console.log('home page');
+        BlazeLayout.render('listing');
     }
 })
 
 FlowRouter.route('/newRecipe', {
     action: (params, queryParams) => {
-        console.log('New recipe page');
+        BlazeLayout.render('recipeForm');
     }
 })
 
 FlowRouter.route('/recipe/:id', {
     action: (params, queryParams) => {
-        console.log(`view recipe page for recipe ${params.id}`);
+        BlazeLayout.render('recipe');
     }
 })
