@@ -27,7 +27,7 @@ Template.recipeForm.events({
         if (recipeId) {
             Recipes.update(recipeId, { $set: data });
         } else {
-            Recipes.insert(data);
+            Meteor.call('insertRecipe', data);
         }
         FlowRouter.go('/');
     }

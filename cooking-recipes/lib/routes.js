@@ -1,4 +1,5 @@
 FlowRouter.route('/', {
+    waitOn: () => Accounts.loginServicesConfigured(),
     action: (params, queryParams) => {
         console.log('home page');
         BlazeLayout.render('listing');

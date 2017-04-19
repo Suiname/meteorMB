@@ -26,4 +26,5 @@ Meteor.startup(() => {
     insert: (recipeId, doc) => doc,
     update: (recipeId, doc) => doc,
   });
+
 });
