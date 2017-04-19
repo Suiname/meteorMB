@@ -21,4 +21,8 @@ Meteor.startup(() => {
   Meteor.publish('recipes', () => {
     return Recipes.find();
   })
+
+  Recipes.allow({
+    insert: (recipeId, doc) => doc
+  });
 });

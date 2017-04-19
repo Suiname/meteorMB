@@ -1,4 +1,18 @@
 <template name="recipeForm">
-    <h1>New Recipe</h1>
-    Some recipeForm
+    <h1>{{showTitle}}</h1>
+    {{#with recipe}}
+    <form id="recipeForm">
+        <div>
+            <input type="text" id="title" placeholder="title" required />
+        </div>
+        <div>
+            <input type="text" id="ingredients" placeholder="ingredients" required />
+        </div>
+        <div>
+            <textarea id="instructions" placeholder="instructions" required></textarea>
+        </div>
+        <button type="submit">Save</button>
+    </form>
+    <a href="/">Back</a>
+    {{/with}}
 </template>
