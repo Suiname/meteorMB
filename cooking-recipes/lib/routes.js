@@ -16,3 +16,9 @@ FlowRouter.route('/recipe/:id', {
         BlazeLayout.render('recipe');
     }
 })
+
+FlowRouter.route('/editRecipe/:id', {
+    action: (params, queryParams) => {
+        BlazeLayout.render('recipeForm');
+    }
+})

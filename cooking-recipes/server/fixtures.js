@@ -16,13 +16,14 @@ Meteor.startup(() => {
     fixtures.forEach((element) => {
       Recipes.insert(element);
     });
-
   }
+
   Meteor.publish('recipes', () => {
     return Recipes.find();
   })
 
   Recipes.allow({
-    insert: (recipeId, doc) => doc
+    insert: (recipeId, doc) => doc,
+    update: (recipeId, doc) => doc,
   });
 });

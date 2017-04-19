@@ -5,4 +5,4 @@ Meteor.methods({
     deleteRecipe: (id) => {
         Recipes.remove(id);
     }
-})
+});

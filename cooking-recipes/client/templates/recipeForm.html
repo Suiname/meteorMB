@@ -3,13 +3,13 @@
     {{#with recipe}}
     <form id="recipeForm">
         <div>
-            <input type="text" id="title" placeholder="title" required />
+            <input type="text" id="title" placeholder="title" value="{{title}}" required />
         </div>
         <div>
-            <input type="text" id="ingredients" placeholder="ingredients" required />
+            <input type="text" id="ingredients" placeholder="ingredients" value="{{ingredients}}" required />
         </div>
         <div>
-            <textarea id="instructions" placeholder="instructions" required></textarea>
+            <textarea id="instructions" placeholder="instructions" required>{{instructions}}</textarea>
         </div>
         <button type="submit">Save</button>
     </form>
