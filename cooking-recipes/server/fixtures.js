@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 Meteor.startup(() => {
   //count recipes
   const num = Recipes.find().count();
+  console.log(`There are ${num} entries in the database.`)
   if (num === 0) {
     const fixtures = [
       {
