@@ -29,6 +29,14 @@ Template.recipeForm.helpers({
     }
     return FlowRouter.redirect('/');
   },
+  isPrivate: () => {
+    const recipeId = FlowRouter.getParam('id');
+    const recipe = Recipes.findOne(recipeId);
+    if (!recipe) {
+      return false;
+    }
+    return recipe.private ? 'checked' : false;
+  }
 });
 
 Template.recipeForm.events({
@@ -38,6 +46,7 @@ Template.recipeForm.events({
       title:        event.target.querySelector('#title').value,
       ingredients:  event.target.querySelector('#ingredients').value,
       instructions: event.target.querySelector('#instructions').value,
+      private:      event.target.querySelector('#private').checked,
     };
     const recipeId = FlowRouter.getParam('id');
     if (recipeId) {

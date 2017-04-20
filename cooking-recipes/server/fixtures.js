@@ -18,8 +18,13 @@ Meteor.startup(() => {
     });
   }
 
-  Meteor.publish('recipes', () => {
-    return Recipes.find();
+  Meteor.publish('recipes', function () {
+    return Recipes.find({
+      $or: [
+        { owner: this.userId },
+        { private: { $ne: true }},
+      ]
+    });
   });
 
   Recipes.allow({
