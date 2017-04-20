@@ -5,6 +5,13 @@ Template.listing.helpers({
   entries: () => {
     return Recipes.find({}, {sort: {title: 1}});
   },
+  isOwner () {
+    if (!Meteor.userId()) {
+      return false;
+    }
+
+    return Meteor.userId() == this.owner;
+  }
 });
 
 Template.listing.events({

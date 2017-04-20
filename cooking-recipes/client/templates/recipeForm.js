@@ -13,6 +13,22 @@ Template.recipeForm.helpers({
     const recipe = Recipes.findOne(recipeId) || {};
     return recipe;
   },
+  canShow: () => {
+    let result = true;
+    if (!Meteor.userId()) {
+      result = false;
+    } else {
+      const recipeId = FlowRouter.getParam('id');
+      const recipe = Recipes.findOne(recipeId);
+      if (recipe) {
+        result = recipe.owner == Meteor.userId();
+      }
+    }
+    if (result) {
+      return true;
+    }
+    return FlowRouter.redirect('/');
+  },
 });
 
 Template.recipeForm.events({
