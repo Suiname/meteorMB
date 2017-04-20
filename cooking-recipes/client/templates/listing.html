@@ -1,14 +1,18 @@
 <template name="listing">
-  <h1>Recipes</h1>
+  <div class="row">
+    <div class="col-xs-12" style="margin-bottom:20px;">
+      <h1>Recipes</h1>
+    </div>
+  </div>
   {{#if currentUser}}
-  <a href="/newRecipe">New</a>
+  <a class="btn btn-success btn-block" href="/newRecipe">New</a>
   {{/if}}
-  <ul>
+  <ul class="list-group">
     {{#each entries}}
-    <li><a href="/recipe/{{_id}}">{{title}}</a>
+    <li class="list-group-item"><a href="/recipe/{{_id}}">{{title}}</a>
       {{#if isOwner}}
-      <a href="/editRecipe/{{_id}}">Edit</a>
-      <button class="delete">delete</button>
+      <a class="list-button edit btn btn-default btn-xs" href="/editRecipe/{{_id}}">Edit</a>
+      <button class="list-button delete btn btn-danger btn-xs">delete</button>
       {{/if}}
     </li>
     {{/each}}

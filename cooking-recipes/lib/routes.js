@@ -1,3 +1,7 @@
+if (Meteor.isClient) {
+  BlazeLayout.setRoot('#main-container');
+}
+
 FlowRouter.route('/', {
   waitOn: () => Accounts.loginServicesConfigured(),
   action: (params, queryParams) => {
