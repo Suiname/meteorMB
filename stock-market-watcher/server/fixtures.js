@@ -5,26 +5,14 @@ Meteor.startup(() => {
     console.log(`${num} stocks in the database.`)
     if (num === 0) {
         const fixtures = [
-            {
-                symbol: 'GOOG',
-                price: 738.32,
-                change: 1,
-            },
-            {
-                symbol: 'AAPL',
-                price: 116.77,
-                change: -1,
-            },
-            {
-                symbol: 'AMZN',
-                price: 659.68,
-                change: 1,
-            },
-            {
-                symbol: 'MSFT',
-                price: 53.51,
-                change: -1,
-            },  
+            { symbol: 'GOOG'},
+            { symbol: 'AAPL'},
+            { symbol: 'ANZ.AX'},
+            { symbol: 'BXB.AX'},
+            { symbol: 'ASX.AX'},
+            { symbol: 'IAG.AX'},
+            { symbol: 'MSFT'},
+            { symbol: 'AMZN'},
         ];
 
         fixtures.forEach((stock) => {
