@@ -31,4 +31,7 @@ Meteor.startup(() => {
             Stocks.insert(stock);
         });
     }
+    Meteor.publish('stocks', function () { 
+        return Stocks.find();
+    });
 });
