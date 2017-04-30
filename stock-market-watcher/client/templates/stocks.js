@@ -12,6 +12,15 @@ Template.stocks.helpers({
         }
         return entries;
     },
+    cssPriceClass () {
+        let newClass = 'price-same';
+        if (this.change > 0) {
+            newClass = 'price-up';
+        } else if (this.change < 0) {
+            newClass = 'price-down';
+        }
+        return newClass;
+    }
 });
 
 Template.stocks.events({
