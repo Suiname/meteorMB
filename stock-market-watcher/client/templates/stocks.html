@@ -4,6 +4,7 @@
             <ul class="list-group">
                 {{#each stocks}}
                 <li class="list-group-item">{{symbol}}
+                    <button class="delete float-right btn btn-danger btn-xs">Delete</button>
                     <div class="float-right">{{price}}</div>
                 </li>
                 {{/each}}
